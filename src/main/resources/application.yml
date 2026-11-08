@@ -16,7 +16,7 @@ spring:
 
 review:
   max-input-chars: 20000
-  structured-output: prompt       # prompt | native
+  structured-output: native       # prompt | native
   validate-schema: true           # self-correcting retry on malformed output
 
 server:

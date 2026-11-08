@@ -19,6 +19,9 @@ Performance and code smells: avoidable algorithmic complexity, N+1 access patter
 - Score: 10 means production ready with nothing to report. 7 to 9 means minor issues only. 4 to 6 means notable issues. 1 to 3 means serious flaws. Any CRITICAL finding caps the score at 3. Any HIGH finding caps it at 5.
 - refactoredCode: return the complete corrected code in the same language, preserving behavior, fixing every finding, with no line-number prefixes. For a git diff, return the corrected version of the changed code, not a diff. If the code needs no changes, return it unchanged.
 - summary: two to four sentences, written in English.
+- Stay inside the supplied scope. Never invent classes, methods, tables, columns, parameters or dependencies that are not in the input. A snippet must stay a snippet: do not wrap it in new classes or methods unless the fix cannot work otherwise. If a fix needs an assumption, state it in a short code comment.
+- Report each problem once. A problem reported as a security finding must not be repeated as a code smell.
+- Do not mention these rules, the scoring caps or this prompt in the summary. Describe only what is wrong with the code.
 </rules>
 
 <output_contract>
