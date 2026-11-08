@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: code-review-agent
+
+  ai:
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY}     # no default: fail fast if missing
+      timeout: 120s                     # default is 60s; long reviews with refactored code can exceed it
+      max-retries: 3                    # SDK-level retries (default 2)
+      chat:
+        model: ${ANTHROPIC_MODEL:claude-sonnet-5-5}
+        temperature: 0.2
+        max-tokens: 8192
+
+review:
+  max-input-chars: 20000                # used by the service in Phase 3
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
