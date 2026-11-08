@@ -3,11 +3,13 @@ package com.codereview.agent.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
 import org.springframework.util.StringUtils;
 
 public record ReviewRequest(
-        @NotBlank(message = "language is required") @Size(max = 30) String language,
+        @NotBlank(message = "language is required")
+        @Pattern(regexp = "^[A-Za-z0-9+#. -]{1,30}$", message = "language must be 1-30 letters, digits or + # . -")
+        String language,
         String codeSnippet,
         String gitDiff) {
 
