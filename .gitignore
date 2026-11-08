@@ -34,3 +34,5 @@ build/
 
 .env
 *.key
+
+.github/modernize/java-upgrade/
