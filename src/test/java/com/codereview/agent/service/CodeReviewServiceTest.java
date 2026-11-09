@@ -126,7 +126,7 @@ class CodeReviewServiceTest {
 
         ArgumentCaptor<String> prompt = ArgumentCaptor.forClass(String.class);
         verify(requestSpec).user(prompt.capture());
-        assertThat(prompt.getValue())
+        assertThat(prompt.getValue().replace("\r\n", "\n"))
                 .contains("git diff written in java")
                 .contains(diff)
                 .doesNotContain("1| ");
