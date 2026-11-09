@@ -1,0 +1,32 @@
+{
+    "codeSnippet":  {
+                        "value":  "import java.sql.Connection;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport java.sql.Statement;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class SqlInjectionDemo {\r\n\r\n    private final Connection connection;\r\n\r\n    public SqlInjectionDemo(Connection connection) {\r\n        this.connection = connection;\r\n    }\r\n\r\n    public List\u003cString\u003e findEmailsByName(String name) throws SQLException {\r\n        String sql = \"SELECT email FROM users WHERE name = \u0027\" + name + \"\u0027\";\r\n        List\u003cString\u003e emails = new ArrayList\u003c\u003e();\r\n        try (Statement statement = connection.createStatement();\r\n             ResultSet rs = statement.executeQuery(sql)) {\r\n            while (rs.next()) {\r\n                emails.add(rs.getString(\"email\"));\r\n            }\r\n        }\r\n        return emails;\r\n    }\r\n\r\n    public void deleteUser(String id) throws SQLException {\r\n        try (Statement statement = connection.createStatement()) {\r\n            statement.executeUpdate(\"DELETE FROM users WHERE id = \" + id);\r\n        }\r\n    }\r\n}",
+                        "PSPath":  "C:\\All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent\\samples\\SqlInjectionDemo.java",
+                        "PSParentPath":  "C:\\All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent\\samples",
+                        "PSChildName":  "SqlInjectionDemo.java",
+                        "PSDrive":  {
+                                        "CurrentLocation":  "All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent",
+                                        "Name":  "C",
+                                        "Provider":  "Microsoft.PowerShell.Core\\FileSystem",
+                                        "Root":  "C:\\",
+                                        "Description":  "",
+                                        "MaximumSize":  null,
+                                        "Credential":  "System.Management.Automation.PSCredential",
+                                        "DisplayRoot":  null
+                                    },
+                        "PSProvider":  {
+                                           "ImplementingType":  "Microsoft.PowerShell.Commands.FileSystemProvider",
+                                           "HelpFile":  "System.Management.Automation.dll-Help.xml",
+                                           "Name":  "FileSystem",
+                                           "PSSnapIn":  "Microsoft.PowerShell.Core",
+                                           "ModuleName":  "Microsoft.PowerShell.Core",
+                                           "Module":  null,
+                                           "Description":  "",
+                                           "Capabilities":  52,
+                                           "Home":  "C:\\Users\\abhis",
+                                           "Drives":  "C"
+                                       },
+                        "ReadCount":  1
+                    },
+    "language":  "java"
+}

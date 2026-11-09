@@ -1,0 +1,32 @@
+{
+    "codeSnippet":  {
+                        "value":  "def find_duplicates(items):\r\n    duplicates = []\r\n    for i in range(len(items)):\r\n        for j in range(len(items)):\r\n            if i != j and items[i] == items[j] and items[i] not in duplicates:\r\n                duplicates.append(items[i])\r\n    return duplicates",
+                        "PSPath":  "C:\\All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent\\samples\\quadratic_loop.py",
+                        "PSParentPath":  "C:\\All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent\\samples",
+                        "PSChildName":  "quadratic_loop.py",
+                        "PSDrive":  {
+                                        "CurrentLocation":  "All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent",
+                                        "Name":  "C",
+                                        "Provider":  "Microsoft.PowerShell.Core\\FileSystem",
+                                        "Root":  "C:\\",
+                                        "Description":  "",
+                                        "MaximumSize":  null,
+                                        "Credential":  "System.Management.Automation.PSCredential",
+                                        "DisplayRoot":  null
+                                    },
+                        "PSProvider":  {
+                                           "ImplementingType":  "Microsoft.PowerShell.Commands.FileSystemProvider",
+                                           "HelpFile":  "System.Management.Automation.dll-Help.xml",
+                                           "Name":  "FileSystem",
+                                           "PSSnapIn":  "Microsoft.PowerShell.Core",
+                                           "ModuleName":  "Microsoft.PowerShell.Core",
+                                           "Module":  null,
+                                           "Description":  "",
+                                           "Capabilities":  52,
+                                           "Home":  "C:\\Users\\abhis",
+                                           "Drives":  "C"
+                                       },
+                        "ReadCount":  1
+                    },
+    "language":  "python"
+}

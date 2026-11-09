@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogReader {
+public class ResourceLeakDemo {
 
     public List<String> readErrorLines(String path) throws IOException {
         List<String> errors = new ArrayList<>();

@@ -5,11 +5,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRepository {
+public class SqlInjectionDemo {
 
     private final Connection connection;
 
-    public UserRepository(Connection connection) {
+    public SqlInjectionDemo(Connection connection) {
         this.connection = connection;
     }
 

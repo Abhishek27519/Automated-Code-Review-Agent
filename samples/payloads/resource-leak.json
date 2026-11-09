@@ -1,0 +1,32 @@
+{
+    "codeSnippet":  {
+                        "value":  "import java.io.BufferedReader;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class ResourceLeakDemo {\r\n\r\n    public List\u003cString\u003e readErrorLines(String path) throws IOException {\r\n        List\u003cString\u003e errors = new ArrayList\u003c\u003e();\r\n        BufferedReader reader = new BufferedReader(new FileReader(path));\r\n        String line;\r\n        while ((line = reader.readLine()) != null) {\r\n            if (line.contains(\"ERROR\")) {\r\n                errors.add(line);\r\n            }\r\n        }\r\n        return errors;\r\n    }\r\n}",
+                        "PSPath":  "C:\\All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent\\samples\\ResourceLeakDemo.java",
+                        "PSParentPath":  "C:\\All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent\\samples",
+                        "PSChildName":  "ResourceLeakDemo.java",
+                        "PSDrive":  {
+                                        "CurrentLocation":  "All Files\\Study\\Projects\\Automated Code Review Agent\\code-review-agent",
+                                        "Name":  "C",
+                                        "Provider":  "Microsoft.PowerShell.Core\\FileSystem",
+                                        "Root":  "C:\\",
+                                        "Description":  "",
+                                        "MaximumSize":  null,
+                                        "Credential":  "System.Management.Automation.PSCredential",
+                                        "DisplayRoot":  null
+                                    },
+                        "PSProvider":  {
+                                           "ImplementingType":  "Microsoft.PowerShell.Commands.FileSystemProvider",
+                                           "HelpFile":  "System.Management.Automation.dll-Help.xml",
+                                           "Name":  "FileSystem",
+                                           "PSSnapIn":  "Microsoft.PowerShell.Core",
+                                           "ModuleName":  "Microsoft.PowerShell.Core",
+                                           "Module":  null,
+                                           "Description":  "",
+                                           "Capabilities":  52,
+                                           "Home":  "C:\\Users\\abhis",
+                                           "Drives":  "C"
+                                       },
+                        "ReadCount":  1
+                    },
+    "language":  "java"
+}

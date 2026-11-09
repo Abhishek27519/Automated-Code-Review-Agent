@@ -36,3 +36,5 @@ build/
 *.key
 
 .github/modernize/java-upgrade/
+
+.github/modernize/
